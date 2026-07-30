@@ -14,18 +14,19 @@ Enter the customer details and customer interaction details below to get a predi
 """)
 
 TypeofContact = st.selectbox("Type of Contact", ["Company Invited", "Self Enquiry"])
-CityTier = st.selectbox("City Tier", ["1", "2", "3"])
+# Convert relevant selectbox inputs to integers
+CityTier = int(st.selectbox("City Tier", ["1", "2", "3"]))
 Occupation = st.selectbox("Occupation",["Free Lancer","Large Business","Salaried","Small Business"])
 Gender = st.selectbox("Gender", ["Male", "Female"])
-NumberOfPersonVisiting = st.selectbox("Number of Persons Visiting", ["1","2","3","4","5"])
-NumberOfFollowups = st.selectbox("Number of Followups", ["1","2","3","4","5","6"])
+NumberOfPersonVisiting = int(st.selectbox("Number of Persons Visiting", ["1","2","3","4","5"]))
+NumberOfFollowups = int(st.selectbox("Number of Followups", ["1","2","3","4","5","6"]))
 ProductPitched = st.selectbox("Product Pitched", ["Basic","Deluxe","King","Standard","Super Deluxe"])
-PreferredPropertyStar = st.selectbox("Preferred Property Star", ["3","4","5"])
+PreferredPropertyStar = int(st.selectbox("Preferred Property Star", ["3","4","5"]))
 MaritalStatus = st.selectbox("Marital Status", ["Married","Single","Divorced","Unmarried"])
-Passport = st.selectbox("Passport", ["0","1"])
-PitchSatisfactionScore = st.selectbox("Pitch Satisfaction Score", ["1","2","3","4","5"])
-OwnCar = st.selectbox("Own Car", ["0","1"])
-NumberOfChildrenVisiting = st.selectbox("Number of Children Visiting", ["0","1","2","3"])
+Passport = int(st.selectbox("Passport", ["0","1"]))
+PitchSatisfactionScore = int(st.selectbox("Pitch Satisfaction Score", ["1","2","3","4","5"]))
+OwnCar = int(st.selectbox("Own Car", ["0","1"]))
+NumberOfChildrenVisiting = int(st.selectbox("Number of Children Visiting", ["0","1","2","3"]))
 Designation = st.selectbox("Designation", ["Executive","Manager","AVP","Senior Manager","VP"])
 
 Age  = st.number_input("Age", min_value=18,max_value=100,value=30)
@@ -54,7 +55,7 @@ input_data = pd.DataFrame([{
     "Monthly Income": MonthlyIncome
 }])
 
-if st.button("Tourism Package Failure"):
+if st.button("Tourism Package Prediction"):
     prediction = model.predict(input_data)[0]
     result = "Tourism Package Purchased" if prediction == 1 else "Tourism Package NOT Purchased"
     st.subheader("Prediction Result:")
