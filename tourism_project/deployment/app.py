@@ -35,24 +35,24 @@ NumberOfTrips = st.number_input("Number of Trips", min_value=1,max_value=100,val
 MonthlyIncome = st.number_input("Monthly Income", min_value=100,max_value=100000,value=8000)
 
 input_data = pd.DataFrame([{
-    "Type of Contact": TypeofContact,
-    "City Tier": CityTier,
+    "TypeofContact": TypeofContact, # Corrected column name
+    "CityTier": CityTier,           # Corrected column name
     "Occupation": Occupation,
     "Gender": Gender,
-    "Number of Persons Visiting": NumberOfPersonVisiting,
-    "Number of Followups": NumberOfFollowups,
-    "Product Pitched": ProductPitched,
-    "Preferred Property Star": PreferredPropertyStar,
-    "Marital Status": MaritalStatus,
+    "NumberOfPersonVisiting": NumberOfPersonVisiting, # Corrected column name
+    "NumberOfFollowups": NumberOfFollowups,       # Corrected column name
+    "ProductPitched": ProductPitched,
+    "PreferredPropertyStar": PreferredPropertyStar, # Corrected column name
+    "MaritalStatus": MaritalStatus,             # Corrected column name
     "Passport": Passport,
-    "Pitch Satisfaction Score": PitchSatisfactionScore,
-    "Own Car": OwnCar,
-    "Number of Children Visiting": NumberOfChildrenVisiting,
+    "PitchSatisfactionScore": PitchSatisfactionScore, # Corrected column name
+    "OwnCar": OwnCar,                           # Corrected column name
+    "NumberOfChildrenVisiting": NumberOfChildrenVisiting, # Corrected column name
     "Designation": Designation,
     "Age": Age,
-    "Duration of Pitch": DurationOfPitch,
-    "Number of Trips": NumberOfTrips,
-    "Monthly Income": MonthlyIncome
+    "DurationOfPitch": DurationOfPitch,         # Corrected column name
+    "NumberOfTrips": NumberOfTrips,
+    "MonthlyIncome": MonthlyIncome
 }])
 
 if st.button("Tourism Package Prediction"):
