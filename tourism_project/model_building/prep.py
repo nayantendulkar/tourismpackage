@@ -10,6 +10,9 @@ df = df.drop(columns=[col for col in df.columns if col.strip() == "" or pd.isna(
 # Drop column CustomerID since it has only unique values
 df.drop(columns=["CustomerID"], inplace=True)
 
+# Standardize gender column
+df['Gender'] = df['Gender'].replace({'Fe Male': 'Female'})
+
 # NOTE: Categorical variables are left unchanged.
 # The training pipeline one-hot-encodes it, and the Streamlit app also sends
 # raw values. Encoding it here (e.g. LabelEncoder) would make training
@@ -31,5 +34,3 @@ ytrain.to_csv("ytrain.csv", index=False)
 ytest.to_csv("ytest.csv", index=False)
 
 print("Data prepared: train/test splits written.")
-
-#TODO Check rubric point "Make the train and test splits available to the next job as a workflow artifact."
