@@ -13,6 +13,7 @@ This application predicts the likelihood of customer purchases of Tourism Packag
 Enter the customer details and customer interaction details below to get a prediction.
 """)
 
+#All categorical variables are here
 TypeofContact = st.selectbox("Type of Contact", ["Company Invited", "Self Enquiry"])
 # Convert relevant selectbox inputs to integers
 CityTier = int(st.selectbox("City Tier", ["1", "2", "3"]))
@@ -28,7 +29,7 @@ PitchSatisfactionScore = int(st.selectbox("Pitch Satisfaction Score", ["1","2","
 OwnCar = int(st.selectbox("Own Car", ["0","1"]))
 NumberOfChildrenVisiting = int(st.selectbox("Number of Children Visiting", ["0","1","2","3"]))
 Designation = st.selectbox("Designation", ["Executive","Manager","AVP","Senior Manager","VP"])
-
+#All numerical variables are here
 Age  = st.number_input("Age", min_value=18,max_value=100,value=30)
 DurationOfPitch = st.number_input("Duration of Pitch", min_value=5,max_value=150,value=30)
 NumberOfTrips = st.number_input("Number of Trips", min_value=1,max_value=100,value=15)
