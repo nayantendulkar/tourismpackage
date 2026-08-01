@@ -70,6 +70,7 @@ with mlflow.start_run():
     best_model = grid_search.best_estimator_
     print("Best params:", grid_search.best_params_)
 
+    #Create Classification report
     classification_threshold = 0.45
 
     y_pred_train_proba = best_model.predict_proba(Xtrain)[:, 1]
